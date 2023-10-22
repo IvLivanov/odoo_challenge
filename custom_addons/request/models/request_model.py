@@ -36,9 +36,9 @@ class Request(models.Model):
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}]
             )["choices"][0]["message"]["content"]
-          except:
+          except Exception as e:
             #This code just demonstrates  the possibility of openai failure.
             #In current prototype, quote just recives a special value.
             #For real applications, this event shall be handled properly. 
-            values['quote_request']='DO NOT SEND THIS QUOTE: connection to chatGPT failed'
+            values['quote_request']='DO NOT SEND THIS QUOTE:' + e
           return super(Request, self).create(values)
