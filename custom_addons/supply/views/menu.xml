@@ -1,0 +1,7 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<odoo>
+ <!-- Main menu referenced as parent in product.xml and supplier.xml -->
+    <menuitem id ="menu_supply"
+        name="Supply"
+        sequence = "10" />
+</odoo>

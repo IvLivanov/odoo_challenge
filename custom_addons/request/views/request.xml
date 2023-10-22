@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!-- This file defines a menu with quote requests -->
+<odoo>
+<!-- form view for new request entry -->
+  <record id="view_supplier_form" model="ir.ui.view">
+        <field name="name">request.form</field>
+        <field name="model">request.request</field>
+        <field name="arch" type="xml">
+            <form>
+            <sheet>
+                <group>
+                    <field name = "client"/>
+                    <field name = "product"/>
+                    <field name = "supplier"/>
+                    <field name = "quote_request"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- tree view. lists existing requests -->
+      <record id="view_supplier_tree" model="ir.ui.view">
+        <field name="name">request.tree</field>
+        <field name="model">request.request</field>
+        <field name="arch" type="xml">
+            <tree>
+                    <field name = "client"/>
+                    <field name = "product"/>
+                    <field name = "supplier"/>
+                    <field name = "quote_request"/>
+            </tree>
+         </field>
+    </record>
+
+    <!-- action calling the above defined forms -->
+    <record id="action_request" model="ir.actions.act_window">
+        <field name="name">Request</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">request.request</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!--  placing just-defined action in the menu_supply -->
+        <menuitem id ="menu_quote_request"
+        name="quote requests"
+        parent ="menu_request"
+        action = "action_request"
+        sequence = "10" />
+</odoo>

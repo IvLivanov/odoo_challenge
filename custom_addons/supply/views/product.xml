@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!-- This file defines a menu with product categories, which may be assigned to suppliers -->
+<odoo>
+    <!-- form view for new products entry -->
+    <record id="view_product_cat_form" model="ir.ui.view">
+        <field name="name">prod.cat.form</field>
+        <field name="model">prod.cat</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="category"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- tree view. lists existing products -->
+    <record id="view_product_cat_tree" model="ir.ui.view">
+        <field name="name">prod.cat.tree</field>
+        <field name="model">prod.cat</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="category"/>
+               
+            </tree>
+        </field>
+    </record>
+     <!-- action calling the above defined forms -->
+    <record id="action_product_cat" model="ir.actions.act_window">
+        <field name="name">Product Categories</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">prod.cat</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--  placing just-defined action in the menu_supply -->
+    <menuitem id="menu_product_cat"
+              name="Product Categories"
+              parent="menu_supply"  
+              action="action_product_cat"
+              sequence="10" /> 
+</odoo>

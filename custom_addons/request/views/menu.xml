@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <!-- Main menu referenced as parent in request.xml -->
+    <menuitem id ="menu_request"
+        name="Request"
+        sequence="10" />
+</odoo>
