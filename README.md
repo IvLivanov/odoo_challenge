@@ -1,6 +1,6 @@
 # odoo_challenge
 
-This is a challenge given me as part of technical skills interview.
+This is a challenge given to me as part of technical skills review.
 This repo contains two custom odoo module: Supply and Request
 
 ## Supply:
