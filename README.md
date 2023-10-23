@@ -1,7 +1,7 @@
 # odoo_challenge
 
 This is a challenge given to me as part of technical skills review.
-This repo contains two custom odoo module: Supply and Request
+This repo contains two custom odoo modules: Supply and Request
 
 ## Supply:
 A prototype of suppliers management system: it allows to add suppliers to postgres Database and associate them with product categories
